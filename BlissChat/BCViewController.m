@@ -7,6 +7,7 @@
 //
 
 #import "BCViewController.h"
+#import "Smooth_Line_ViewViewController.h"
 
 @interface BCViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    Smooth_Line_ViewViewController *sLVViewController = [[Smooth_Line_ViewViewController alloc] init];
+    
+    [self.inputContainer addSubview:sLVViewController.view];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BCViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *inputContainer;
 
 @end

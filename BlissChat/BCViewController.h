@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Smooth_Line_ViewViewController.h"
 
-@interface BCViewController : UIViewController
+@interface BCViewController : UIViewController {
+    @private
+    Smooth_Line_ViewViewController *inputViewController;
+}
+
 @property (weak, nonatomic) IBOutlet UIView *inputContainer;
+
+- (IBAction)sendPressed:(id)sender;
 
 @end

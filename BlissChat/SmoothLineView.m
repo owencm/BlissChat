@@ -30,6 +30,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2);
 @synthesize lineColor;
 @synthesize lineWidth;
 @synthesize empty = _empty;
+@synthesize path;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -111,6 +112,10 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
     drawBox.size.height += self.lineWidth * 4.0;
     
     [self setNeedsDisplayInRect:drawBox];
+}
+
+- (void)redraw {
+    [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect {

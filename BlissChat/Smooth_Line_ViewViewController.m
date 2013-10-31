@@ -7,14 +7,24 @@
 //
 
 #import "Smooth_Line_ViewViewController.h"
+#import "SmoothLineView.h"
 
 @implementation Smooth_Line_ViewViewController
 
+@synthesize smoothLineView;
+
 - (void)viewDidLoad
 {
-    [self.view addSubview:[[SmoothLineView alloc] initWithFrame:self.view.bounds ]];
+    smoothLineView = [[SmoothLineView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview: smoothLineView];
+}
+
+- (CGPathRef) getPath
+{
+    CGPathRef oldPath = CGPathCreateCopy([smoothLineView path]);
+    smoothLineView.path = CGPathCreateMutable();
+    [smoothLineView redraw];
+    return oldPath;
 }
 
 @end
-
-

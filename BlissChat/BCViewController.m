@@ -19,10 +19,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    inputViewController = [[Smooth_Line_ViewViewController alloc] init];
-    
-    [self.inputContainer addSubview:inputViewController.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,8 +28,7 @@
 }
 
 - (IBAction)sendPressed:(id)sender {
-    CGPathRef path = [inputViewController getPath];
-    NSLog(@"Received the path");
+    CGPathRef path = [self.childViewControllers[0] getPath];
 }
 
 @end

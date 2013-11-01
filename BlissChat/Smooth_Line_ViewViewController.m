@@ -22,8 +22,7 @@
 - (CGPathRef) getPath
 {
     CGPathRef oldPath = CGPathCreateCopy([smoothLineView path]);
-    smoothLineView.path = CGPathCreateMutable();
-    [smoothLineView redraw];
+    [smoothLineView clear];
     return oldPath;
 }
 

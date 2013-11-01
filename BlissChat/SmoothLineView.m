@@ -114,7 +114,8 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
     [self setNeedsDisplayInRect:drawBox];
 }
 
-- (void)redraw {
+- (void) clear {
+    path = CGPathCreateMutable();
     [self setNeedsDisplay];
 }
 

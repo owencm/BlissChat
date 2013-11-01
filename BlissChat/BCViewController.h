@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Smooth_Line_ViewViewController.h"
 
-@interface BCViewController : UIViewController {
+@interface BCViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     @private
     Smooth_Line_ViewViewController *inputViewController;
+    NSArray *messages;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *inputContainer;

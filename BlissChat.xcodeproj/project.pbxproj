@@ -24,6 +24,7 @@
 		62A902C1182059450021EC3D /* Smooth_Line_ViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A902BD182059450021EC3D /* Smooth_Line_ViewViewController.m */; };
 		62A902C2182059460021EC3D /* Smooth_Line_ViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62A902BE182059450021EC3D /* Smooth_Line_ViewViewController.xib */; };
 		62A902C3182059460021EC3D /* SmoothLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A902C0182059450021EC3D /* SmoothLineView.m */; };
+		62DFFD11182441A60091465D /* BCMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DFFD10182441A60091465D /* BCMessageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		62A902BE182059450021EC3D /* Smooth_Line_ViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Smooth_Line_ViewViewController.xib; sourceTree = "<group>"; };
 		62A902BF182059450021EC3D /* SmoothLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothLineView.h; sourceTree = "<group>"; };
 		62A902C0182059450021EC3D /* SmoothLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothLineView.m; sourceTree = "<group>"; };
+		62DFFD0F182441A60091465D /* BCMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMessageCell.h; sourceTree = "<group>"; };
+		62DFFD10182441A60091465D /* BCMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessageCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +123,11 @@
 		62A9028D182058EB0021EC3D /* BlissChat */ = {
 			isa = PBXGroup;
 			children = (
+				62A90299182058EB0021EC3D /* Main.storyboard */,
 				62A90296182058EB0021EC3D /* BCAppDelegate.h */,
 				62A90297182058EB0021EC3D /* BCAppDelegate.m */,
-				62A90299182058EB0021EC3D /* Main.storyboard */,
+				62DFFD0F182441A60091465D /* BCMessageCell.h */,
+				62DFFD10182441A60091465D /* BCMessageCell.m */,
 				62A9029C182058EB0021EC3D /* BCViewController.h */,
 				62A9029D182058EB0021EC3D /* BCViewController.m */,
 				62A902C4182059530021EC3D /* SmoothLineView */,
@@ -272,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DFFD11182441A60091465D /* BCMessageCell.m in Sources */,
 				62A902C3182059460021EC3D /* SmoothLineView.m in Sources */,
 				62A9029E182058EB0021EC3D /* BCViewController.m in Sources */,
 				62A90294182058EB0021EC3D /* main.m in Sources */,
@@ -487,6 +493,7 @@
 				62A902B8182058EB0021EC3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62A902B9182058EB0021EC3D /* Build configuration list for PBXNativeTarget "BlissChatTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +502,7 @@
 				62A902BB182058EB0021EC3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

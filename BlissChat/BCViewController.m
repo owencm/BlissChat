@@ -8,6 +8,7 @@
 
 #import "BCViewController.h"
 #import "Smooth_Line_ViewViewController.h"
+#import "BCMessageCell.h"
 
 @interface BCViewController ()
 
@@ -19,6 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    messages = [NSMutableArray arrayWithObject:@"Hello"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,6 +31,24 @@
 
 - (IBAction)sendPressed:(id)sender {
     CGPathRef path = [self.childViewControllers[0] getPath];
+}
+
+
+
+
+// Table Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [messages count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BCMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
+    
+//    cell.textLabel.text = [messages objectAtIndex:indexPath.row];
+    return cell;
 }
 
 @end

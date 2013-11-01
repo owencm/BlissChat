@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BCUIBliss.h"
 
-@interface BCMessageCell : UITableViewCell
+@interface BCMessageCell : UITableViewCell {
+    UIBezierPath *_path;
+}
+
+@property (weak, nonatomic) IBOutlet BCUIBliss *blissView;
+@property (nonatomic) UIBezierPath *path;
 
 @end

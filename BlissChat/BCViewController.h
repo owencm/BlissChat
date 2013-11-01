@@ -12,10 +12,12 @@
 @interface BCViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     @private
     Smooth_Line_ViewViewController *inputViewController;
-    NSArray *messages;
+    NSMutableArray *messages;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *inputContainer;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 - (IBAction)sendPressed:(id)sender;
 

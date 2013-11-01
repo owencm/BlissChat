@@ -7,16 +7,24 @@
 //
 
 #import "BCMessageCell.h"
+#import "BCUIBliss.h"
 
 @implementation BCMessageCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+@synthesize path = _path;
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Initialization code
+        
     }
     return self;
+}
+
+- (void)setPath:(UIBezierPath *)path {
+    _path = path;
+    self.blissView.path = path;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

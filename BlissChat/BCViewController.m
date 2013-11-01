@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    messages = [NSMutableArray arrayWithObject:@"Hello"];
+    messages = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,6 +31,8 @@
 
 - (IBAction)sendPressed:(id)sender {
     CGPathRef path = [self.childViewControllers[0] getPath];
+    [messages addObject:[UIBezierPath bezierPathWithCGPath:path]];
+    [self.tableView reloadData];
 }
 
 
@@ -46,9 +48,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BCMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
+    cell.path = [messages objectAtIndex:indexPath.row];
     
-//    cell.textLabel.text = [messages objectAtIndex:indexPath.row];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 
 @end

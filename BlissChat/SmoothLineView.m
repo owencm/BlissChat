@@ -29,7 +29,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2);
 
 @synthesize lineColor;
 @synthesize lineWidth;
-@synthesize empty = _empty;
 @synthesize path;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -39,7 +38,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2);
         self.lineWidth = DEFAULT_WIDTH;
         self.lineColor = DEFAULT_COLOR;
         // NOTE: do not change the backgroundColor here, so it can be set in IB.
-        self.empty = YES;
 		path = CGPathCreateMutable();
     }
     
@@ -53,7 +51,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2);
         self.lineWidth = DEFAULT_WIDTH;
         self.lineColor = DEFAULT_COLOR;
         self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
-        self.empty = YES;
 		path = CGPathCreateMutable();
     }
     
@@ -131,9 +128,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
     CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
     
     CGContextStrokePath(context);
-    
-    
-    self.empty = NO;
 }
 
 -(void)dealloc {

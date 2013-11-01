@@ -23,7 +23,6 @@
 @property (nonatomic, retain) UIColor *lineColor;
 @property (readwrite) CGFloat lineWidth;
 @property (nonatomic, assign) CGMutablePathRef path; // Not sure what the stuff in brackets should be
-@property (assign, nonatomic) BOOL empty;
 
 -(void) clear;
 

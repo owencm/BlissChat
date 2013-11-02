@@ -26,4 +26,18 @@
     return oldPath;
 }
 
+- (void) undo
+{
+    NSLog(@"undid");
+    [smoothLineView.pathHistory removeLastObject];
+    CGMutablePathRef path = CGPathCreateMutable();
+    for (UIBezierPath *bezierPath in smoothLineView.pathHistory) {
+        CGPathRef subPath = bezierPath.CGPath;
+        CGPathAddPath(path, NULL, subPath);
+    }
+    CGPathRelease(smoothLineView.path);
+    smoothLineView.path = path;
+    [smoothLineView setNeedsDisplay];
+}
+
 @end

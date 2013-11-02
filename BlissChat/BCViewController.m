@@ -36,6 +36,10 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)undoPressed:(id)sender {
+    [self.childViewControllers[0] undo];
+}
+
 
 
 

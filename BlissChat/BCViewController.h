@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *shadow;
 
 - (IBAction)sendPressed:(id)sender;
+- (IBAction)undoPressed:(id)sender;
 
 @end

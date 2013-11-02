@@ -11,6 +11,7 @@
 
 
 @interface SmoothLineView : UIView {
+    NSMutableArray *pathHistory;
 @private
     CGPoint currentPoint;
     CGPoint previousPoint1;
@@ -18,11 +19,13 @@
     CGFloat lineWidth;
     UIColor *lineColor;
     UIImage *curImage;
+    NSMutableArray *transaction;
 }
 
 @property (nonatomic, retain) UIColor *lineColor;
 @property (readwrite) CGFloat lineWidth;
 @property (nonatomic, assign) CGMutablePathRef path; // Not sure what the stuff in brackets should be
+@property NSMutableArray *pathHistory;
 
 -(void) clear;
 

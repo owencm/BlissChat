@@ -30,7 +30,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2);
 @synthesize lineColor;
 @synthesize lineWidth;
 @synthesize path;
-
+@synthesize pathHistory;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -40,6 +40,8 @@ CGPoint midPoint(CGPoint p1, CGPoint p2);
         self.lineColor = DEFAULT_COLOR;
         self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
 		path = CGPathCreateMutable();
+        pathHistory = [[NSMutableArray alloc] init];
+        transaction = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -55,11 +57,20 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     
+    [transaction removeAllObjects];
     previousPoint1 = [touch previousLocationInView:self];
     previousPoint2 = [touch previousLocationInView:self];
     currentPoint = [touch locationInView:self];
     
     [self touchesMoved:touches withEvent:event];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    CGMutablePathRef transactionPath = CGPathCreateMutable();
+    for (UIBezierPath *subPath in transaction) {
+        CGPathAddPath(transactionPath, NULL, subPath.CGPath);
+    }
+    [pathHistory addObject:[UIBezierPath bezierPathWithCGPath:transactionPath]];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -75,7 +86,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
         return;
     }
     
-    
     previousPoint2 = previousPoint1;
     previousPoint1 = [touch previousLocationInView:self];
     currentPoint = [touch locationInView:self];
@@ -87,8 +97,11 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
     CGPathAddQuadCurveToPoint(subpath, NULL, previousPoint1.x, previousPoint1.y, mid2.x, mid2.y);
     CGRect bounds = CGPathGetBoundingBox(subpath);
 	
+    // Store the newly drawn section to the history array so we can undo
+    // Not sure if this will create a memory leak since when I remove the UIBezierPaths from the history array 
+    [transaction addObject: [UIBezierPath bezierPathWithCGPath: subpath]];
 	CGPathAddPath(path, NULL, subpath);
-	CGPathRelease(subpath);
+    // CGPathRelease(subpath);
     
     CGRect drawBox = bounds;
     drawBox.origin.x -= self.lineWidth * 2.0;
@@ -100,7 +113,13 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
 }
 
 - (void) clear {
+    CGPathRelease(path);
     path = CGPathCreateMutable();
+//    for (UIBezierPath *bezierPath in pathHistory) {
+//        CGPathRelease(bezierPath.CGPath);
+//    }
+    // This releases all of the UIBezierPaths and hopefully their CGPaths
+    [pathHistory removeAllObjects];
     [self setNeedsDisplay];
 }
 

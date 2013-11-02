@@ -27,7 +27,7 @@
     CGContextSaveGState(context);
     
     CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
-    CGContextSetLineWidth(context, 4.0f);
+    CGContextSetLineWidth(context, 2.0f);
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineJoin(context, kCGLineJoinRound);
     CGContextSetAllowsAntialiasing(context, YES);

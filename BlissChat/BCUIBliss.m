@@ -19,18 +19,26 @@
     return self;
 }
 
-
 - (void)drawRect:(CGRect)rect {
-    [[UIColor redColor] setStroke];
-    
-    UIBezierPath *smallPath = [[UIBezierPath alloc] init];
     CGAffineTransform transform = CGAffineTransformMakeScale(0.4f, 0.4f);
-    CGPathRef intermediatePath = CGPathCreateCopyByTransformingPath(self.path.CGPath,
-                                                                    &transform);
-    smallPath.CGPath = intermediatePath;
-    CGPathRelease(intermediatePath);
+    CGPathRef smallPath = CGPathCreateCopyByTransformingPath(self.path.CGPath, &transform);
     
-    [smallPath stroke];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    
+    CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
+    CGContextSetLineWidth(context, 4.0f);
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineJoin(context, kCGLineJoinRound);
+    CGContextSetAllowsAntialiasing(context, YES);
+    CGContextSetShouldAntialias(context, YES);
+    CGContextSetMiterLimit(context, 2.0);
+    
+    CGContextAddPath(context, smallPath);
+    CGContextStrokePath(context);
+    
+    CGContextRestoreGState(context);
+    CGPathRelease(smallPath);
 }
 
 @end

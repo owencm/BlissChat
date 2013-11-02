@@ -31,18 +31,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2);
 @synthesize lineWidth;
 @synthesize path;
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    
-    if (self) {
-        self.lineWidth = DEFAULT_WIDTH;
-        self.lineColor = DEFAULT_COLOR;
-        // NOTE: do not change the backgroundColor here, so it can be set in IB.
-		path = CGPathCreateMutable();
-    }
-    
-    return self;
-}
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

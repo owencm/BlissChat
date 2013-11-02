@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62A79651182553CE0006BF20 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A79650182553CE0006BF20 /* shadow.png */; };
 		62A90288182058EB0021EC3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A90287182058EB0021EC3D /* Foundation.framework */; };
 		62A9028A182058EB0021EC3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A90289182058EB0021EC3D /* CoreGraphics.framework */; };
 		62A9028C182058EB0021EC3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A9028B182058EB0021EC3D /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62A79650182553CE0006BF20 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		62A90284182058EB0021EC3D /* BlissChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlissChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62A90287182058EB0021EC3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		62A90289182058EB0021EC3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +137,7 @@
 				62DFFD10182441A60091465D /* BCMessageCell.m */,
 				62DFFD14182449500091465D /* BCUIBliss.h */,
 				62DFFD15182449500091465D /* BCUIBliss.m */,
+				62A79650182553CE0006BF20 /* shadow.png */,
 				62A902C4182059530021EC3D /* SmoothLineView */,
 				62A9029F182058EB0021EC3D /* Images.xcassets */,
 				62A9028E182058EB0021EC3D /* Supporting Files */,
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A79651182553CE0006BF20 /* shadow.png in Resources */,
 				62A902A0182058EB0021EC3D /* Images.xcassets in Resources */,
 				62A902C2182059460021EC3D /* Smooth_Line_ViewViewController.xib in Resources */,
 				62A90292182058EB0021EC3D /* InfoPlist.strings in Resources */,

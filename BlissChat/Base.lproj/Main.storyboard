@@ -16,8 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vhh-jo-xOY">
+                                <rect key="frame" x="0.0" y="710" width="768" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cU-vu-6rC">
-                                <rect key="frame" x="678" y="774" width="95" height="248"/>
+                                <rect key="frame" x="674" y="774" width="95" height="248"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="inputContainer" destination="nkA-rt-E2B" id="d48-5C-AQs"/>
+                        <outlet property="shadow" destination="Vhh-jo-xOY" id="IWb-JX-Lec"/>
                         <outlet property="tableView" destination="RzF-Xu-TUS" id="vGB-YZ-XpJ"/>
                     </connections>
                 </viewController>
@@ -93,6 +98,9 @@
             <point key="canvasLocation" x="1167" y="314"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shadow.png" width="200" height="64"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>

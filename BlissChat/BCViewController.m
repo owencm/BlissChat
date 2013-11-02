@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.view bringSubviewToFront:self.shadow];
     messages = [[NSMutableArray alloc] init];
 }
 

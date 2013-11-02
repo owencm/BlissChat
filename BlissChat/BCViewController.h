@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *inputContainer;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (weak, nonatomic) IBOutlet UIImageView *shadow;
 
 - (IBAction)sendPressed:(id)sender;
 
